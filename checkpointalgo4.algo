@@ -1,0 +1,20 @@
+FUNCTION palindrome(a) : BOOLEAN
+VAR
+    r:BOOLEAN:= FALSE;
+BEGIN
+    IF (a[0]=a[a.length-1] ) THEN
+        r:=palindrome(a[1:a.length-2])
+    ELSE_IF ((a="") or(a.length=1)) THEN
+        r:=TRUE;
+    ELSE
+        r:=FALSE;
+    END_IF
+    RETURN r ;
+END
+ALGORITHM palindromef
+VAR
+    a :STRING;
+BEGIN
+    read(a);
+    write(palindrome(a));
+END
